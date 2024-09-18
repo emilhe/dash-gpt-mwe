@@ -22,7 +22,7 @@ Make sure that you have installed Python and Poetry. Setup the environment,
 poetry install
 ```
 
-Copy the ´.env.example´ file,
+Copy the `.env.example` file,
 
 ```
 cp .env.example .env
