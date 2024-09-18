@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "dash-gpt"
+version = "0.1.0"
+description = "A small example demonstrating streaming responses from OpenAI to a Dash app"
+authors = ["emilhe <emil.h.eriksen@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+dash-extensions = "^1.0.18"
+flask-cors = "^4.0.1"
+starlette = "^0.37.2"
+fastapi = "^0.115.0"
+openai = "^1.46.0"
+uvicorn = "^0.30.6"
+gunicorn = "^23.0.0"
+python-dotenv = "^1.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"

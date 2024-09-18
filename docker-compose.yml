@@ -1,0 +1,21 @@
+services:
+  api:
+    build:
+      context: .
+    container_name: api
+    ports:
+      - "8000:80"
+    volumes:
+      - .env:/.env
+    command: [ "poetry", "run", "python", "-m", "uvicorn", "api:app", "--port", "80", "--host", "0.0.0.0" ]
+  app:
+    build:
+      context: .
+    depends_on:
+      - api
+    container_name: app
+    ports:
+      - "8050:80"
+    volumes:
+      - .env:/.env
+    command: [ "poetry", "run", "python", "-m", "gunicorn", "app:server", "-b", "0.0.0.0:80"]
